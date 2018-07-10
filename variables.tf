@@ -8,8 +8,8 @@ variable "location" {
 }
 
 variable "server_version" {
-  description = "The version for the database server. Valid values are: 2.0 (for v11 server) and 12.0 (for v12 server)."
-  default     = "12.0"
+description = "The version for the database server. Valid values are: 2.0 (for v11 server) and 12.0 (for v12 server)."
+    default     = "12.0"
 }
 
 variable "db_name" {
@@ -18,7 +18,7 @@ variable "db_name" {
 
 variable "db_edition" {
   description = "The edition of the database to be created."
-  default     = "Basic"
+  default = "Basic"
 }
 
 variable "service_objective_name" {
