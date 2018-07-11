@@ -25,11 +25,11 @@ COPY . /usr/src/${MODULE_NAME}
 
 WORKDIR /usr/src/${MODULE_NAME}
 # RUN ["bundle", "install", "--gemfile", "./Gemfile"]
-RUN sudo apt-get install -y unzip >/dev/null
-RUN ["wget", "https://releases.hashicorp.com/terraform/0.11.1/terraform_0.11.1_linux_amd64.zip", ">/dev/null"]
-RUN ["wget", "https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz", ">/dev/null"]
-RUN ["unzip", "terraform_0.11.1_linux_amd64.zip", ">/dev/null"]
-RUN ["tar", "-zxvf", "go1.9.2.linux-amd64.tar.gz", "-C", "/usr/local/", ">/dev/null"]
+RUN apt-get install -y unzip >/dev/null
+RUN ["wget", "https://releases.hashicorp.com/terraform/0.11.1/terraform_0.11.1_linux_amd64.zip"]
+RUN ["wget", "https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz"]
+RUN ["unzip", "terraform_0.11.1_linux_amd64.zip"]
+RUN ["tar", "-zxvf", "go1.9.2.linux-amd64.tar.gz", "-C", "/usr/local/"]
 RUN ["mv", "terraform", "/usr/local/bin"]
 # RUN ["export", "GOPATH=$HOME/go"]
 # RUN ["export", "PATH=$PATH:$GOROOT/bin:$GOPATH/bin"]
