@@ -20,6 +20,6 @@ jobs:
     - stage: go test
       install: true
       script:
-#      - docker build --build-arg BUILD_TERRAFORM_VERSION=${TERRAFORM_VERSION} -t ${IMAGE_NAME} .
-#      - docker run ${IMAGE_NAME} rake build
-      - go test
+      - docker build --build-arg BUILD_TERRAFORM_VERSION=${TERRAFORM_VERSION} -t ${IMAGE_NAME} .
+      - docker run ${IMAGE_NAME} go test
+#      - go test
