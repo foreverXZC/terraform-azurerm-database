@@ -24,4 +24,5 @@ RUN mkdir /usr/src/${MODULE_NAME}
 COPY . /usr/src/${MODULE_NAME}
 
 WORKDIR /usr/src/${MODULE_NAME}
-# RUN ["go", "install", "--gemfile", "./Gemfile"]
+# RUN ["bundle", "install", "--gemfile", "./Gemfile"]
+RUN ["apt-get", "install", "golang-go"]
