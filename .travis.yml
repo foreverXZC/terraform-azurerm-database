@@ -21,4 +21,8 @@ jobs:
       install: true
       script:
       - docker build --build-arg BUILD_TERRAFORM_VERSION=${TERRAFORM_VERSION} -t ${IMAGE_NAME} .
+      - docker run ${IMAGE_NAME} bash -c "export GOPATH=$HOME/go && export PATH=$PATH:$GOROOT/bin:$GOPATH/bin"
+      - docker run ${IMAGE_NAME} bash -c "go get github.com/denisenkom/go-mssqldb"
+      - docker run ${IMAGE_NAME} bash -c "go get github.com/gruntwork-io/terratest/modules/retry"
+      - docker run ${IMAGE_NAME} bash -c "go get github.com/gruntwork-io/terratest/modules/terraform"
       - docker run ${IMAGE_NAME} bash -c "cd terratest/sql && go test"
