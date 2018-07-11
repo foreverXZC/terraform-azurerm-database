@@ -25,4 +25,4 @@ COPY . /usr/src/${MODULE_NAME}
 
 WORKDIR /usr/src/${MODULE_NAME}
 # RUN ["bundle", "install", "--gemfile", "./Gemfile"]
-RUN ["apt-get", "install", "golang-go"]
+RUN ["apt-get", "install", "-y", "golang-go"]
