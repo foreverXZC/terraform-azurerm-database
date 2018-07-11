@@ -4,7 +4,7 @@
 # http://lint.travis-ci.org/
 sudo: required
 
-language: ruby
+language: go
 
 rvm:
   - 2.3
@@ -13,12 +13,13 @@ services:
   - docker
 
 env:
-  - TERRAFORM_VERSION=0.11.1 IMAGE_NAME=azure-database-module
+  - TERRAFORM_VERSION=0.11.1 IMAGE_NAME=terraform-azure-database-module
 
 jobs:
   include:
-    - stage: rake build
+    - stage: go test
       install: true
       script:
-      - docker build --build-arg BUILD_TERRAFORM_VERSION=${TERRAFORM_VERSION} -t ${IMAGE_NAME} .
-      - docker run ${IMAGE_NAME} rake build
+#      - docker build --build-arg BUILD_TERRAFORM_VERSION=${TERRAFORM_VERSION} -t ${IMAGE_NAME} .
+#      - docker run ${IMAGE_NAME} rake build
+      - go test
