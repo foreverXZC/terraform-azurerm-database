@@ -26,3 +26,5 @@ COPY . /usr/src/${MODULE_NAME}
 WORKDIR /usr/src/${MODULE_NAME}
 # RUN ["bundle", "install", "--gemfile", "./Gemfile"]
 RUN ["apt-get", "install", "-y", "golang-go"]
+RUN ["apt-get", "install", "-y", "terraform"]
+RUN ["cd", "terratest"]
