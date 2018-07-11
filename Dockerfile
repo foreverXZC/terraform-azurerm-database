@@ -25,7 +25,7 @@ COPY . /usr/src/${MODULE_NAME}
 
 WORKDIR /usr/src/${MODULE_NAME}
 # RUN ["bundle", "install", "--gemfile", "./Gemfile"]
-RUN ["apt-get", "install", "-y", "unzip", ">/dev/null"]
+RUN sudo apt-get install -y unzip >/dev/null
 RUN ["wget", "https://releases.hashicorp.com/terraform/0.11.1/terraform_0.11.1_linux_amd64.zip", ">/dev/null"]
 RUN ["wget", "https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz", ">/dev/null"]
 RUN ["unzip", "terraform_0.11.1_linux_amd64.zip", ">/dev/null"]
