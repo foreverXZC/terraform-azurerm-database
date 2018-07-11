@@ -28,6 +28,7 @@ WORKDIR /usr/src/${MODULE_NAME}
 RUN ["apt-get", "install", "-y", "golang-go"]
 RUN ["apt-get", "install", "-y", "unzip"]
 RUN ["wget", "https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip"]
-RUN ["unzip", "terraform_0.11.1_linux_amd64.zip"]
+RUN ["unzip", "terraform_0.11.7_linux_amd64.zip"]
 RUN ["mv", "terraform", "/usr/local/bin"]
+RUN ["ls"]
 RUN ["cd", "terratest"]
