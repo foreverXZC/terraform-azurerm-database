@@ -1,5 +1,5 @@
 module "sql-database" {
-    source              = "github.com/Azure/terraform-azurerm-database"
+    source              = "../../"
     resource_group_name = "${var.resource_group_name}"
     location            = "${var.location}"
     db_name             = "${var.db_name}"
