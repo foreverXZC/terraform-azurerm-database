@@ -4,7 +4,7 @@
 # http://lint.travis-ci.org/
 sudo: required
 
-language: go
+language: ruby
 
 rvm:
   - 2.3
