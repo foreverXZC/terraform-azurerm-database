@@ -16,11 +16,13 @@ namespace :static do
   task :format do
     format_tf
   end
+  task :test do
+    puts "Hello World!"
 end
 
 task :prereqs => []
 
-task :validate => [ 'static:style', 'static:lint' ]
+task :validate => [ 'static:style', 'static:lint', 'static:test' ]
 
 task :format => [ 'static:format' ]
 
