@@ -69,4 +69,6 @@ func TestTerraformHttpExample(t *testing.T) {
 
 		return "", nil
 	})
+
+	terraform.Destroy(t, terraformOptions)
 }
