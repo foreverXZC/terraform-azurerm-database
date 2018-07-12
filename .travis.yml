@@ -13,7 +13,7 @@ services:
   - docker
 
 env:
-  - TERRAFORM_VERSION=0.11.5 IMAGE_NAME=terraform-azure-database-module
+  - TERRAFORM_VERSION=0.11.4 IMAGE_NAME=terraform-azure-database-module
 
 jobs:
   include:
