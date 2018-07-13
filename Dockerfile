@@ -37,4 +37,4 @@ RUN /bin/bash -c "go get github.com/denisenkom/go-mssqldb"
 RUN /bin/bash -c "go get github.com/gruntwork-io/terratest/modules/retry"
 RUN /bin/bash -c "go get github.com/gruntwork-io/terratest/modules/terraform"
 
-RUN ["bundle", "install", "--gemfile", "./Gemfile"]
+RUN ["bundle", "install", "--gemfile", "../../Gemfile"]

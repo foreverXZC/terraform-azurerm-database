@@ -17,7 +17,10 @@ namespace :static do
     format_tf
   end
   task :test do
-    puts `go test`
+    success = system ("go test")
+    if not success 
+      raise "ERROR: Go test failed!\n".red
+    end
     puts "Hello World!"
   end
 end
