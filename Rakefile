@@ -21,16 +21,30 @@ namespace :static do
     if not success 
       raise "ERROR: Export failed!\n".red
     end
-    system ("export PATH=$PATH:/usr/local/go/bin")
-    puts "export PATH=$PATH:/usr/local/go/bin"
-    system ("go get github.com/denisenkom/go-mssqldb")
-    puts "go get github.com/denisenkom/go-mssqldb"
-    system ("go get github.com/gruntwork-io/terratest/modules/retry")
-    puts "go get github.com/gruntwork-io/terratest/modules/retry"
-    system ("go get github.com/gruntwork-io/terratest/modules/terraform")
-    puts "go get github.com/gruntwork-io/terratest/modules/terraform"
-    system ("cd terratest/sql")
-    system ("go test")
+    success = system ("export PATH=$PATH:/usr/local/go/bin")
+    if not success 
+      raise "ERROR: Export failed!\n".red
+    end
+    success = system ("go get github.com/denisenkom/go-mssqldb")
+    if not success 
+      raise "ERROR: Go failed!\n".red
+    end
+    success = system ("go get github.com/gruntwork-io/terratest/modules/retry")
+    if not success 
+      raise "ERROR: Go failed!\n".red
+    end
+    success = system ("go get github.com/gruntwork-io/terratest/modules/terraform")
+    if not success 
+      raise "ERROR: Go failed!\n".red
+    end
+    success = system ("cd terratest/sql")
+    if not success 
+      raise "ERROR: Cd failed!\n".red
+    end
+    success = system ("go test")
+    if not success 
+      raise "ERROR: Go test failed!\n".red
+    end
     puts "Hello World!"
   end
   task :hello do
