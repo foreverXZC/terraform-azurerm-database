@@ -18,7 +18,7 @@ namespace :static do
   end
   task :test do
 #    puts "Hello World!"
-#    exec("export GOPATH=$HOME/terratest")
+    exec("export GOPATH=$HOME/terratest")
     exec("export PATH=$PATH:/usr/local/go/bin")
 #    exec("go get github.com/denisenkom/go-mssqldb")
 #    exec("go get github.com/gruntwork-io/terratest/modules/retry")
@@ -29,6 +29,7 @@ namespace :static do
   end
   task :hello do
     puts "Hello World!"
+  end
 end
 
 task :prereqs => []
