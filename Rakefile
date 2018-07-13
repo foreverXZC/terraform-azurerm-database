@@ -19,10 +19,7 @@ namespace :static do
   task :test do
     system ("export GOPATH=$HOME/terratest/sql")
     system ("export PATH=$PATH:/usr/local/go/bin")
-    success = system ("cd terratest/sql")
-    if not success 
-      raise "ERROR: Cd failed!\n".red
-    end
+    puts 'cd terratest/sql'
     puts `go version`
     puts `go get github.com/denisenkom/go-mssqldb`
     puts `go get github.com/gruntwork-io/terratest/modules/retry`
@@ -40,7 +37,7 @@ end
 
 task :prereqs => []
 
-task :validate => [ 'static:style', 'static:lint', 'static:hello', 'static:test']
+task :validate => [ 'static:style', 'static:lint', 'static:test']
 
 task :format => [ 'static:format' ]
 
