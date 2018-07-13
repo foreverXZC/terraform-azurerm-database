@@ -17,6 +17,8 @@ namespace :static do
     format_tf
   end
   task :test do
+    exec("export GOPATH=$HOME/terratest")
+    exec("export PATH=$PATH:/usr/local/go/bin")
     puts "Hello World!"
   end
 end
@@ -31,7 +33,7 @@ task :build => [ 'prereqs', 'validate' ]
 
 task :unit => []
 
-task :e2e => [ 'integration:test' ]
+task :e2e => []
 
 task :default => [ 'build' ]
 
