@@ -17,15 +17,16 @@ namespace :static do
     format_tf
   end
   task :test do
-    system ("export GOPATH=$HOME/terratest")
+    system ("export GOPATH=$HOME/terratest/sql")
     system ("export PATH=$PATH:/usr/local/go/bin")
-    puts `go get github.com/denisenkom/go-mssqldb`
-    puts `go get github.com/gruntwork-io/terratest/modules/retry`
-    puts `go get github.com/gruntwork-io/terratest/modules/terraform`
     success = system ("cd terratest/sql")
     if not success 
       raise "ERROR: Cd failed!\n".red
     end
+    puts `go version`
+    puts `go get github.com/denisenkom/go-mssqldb`
+    puts `go get github.com/gruntwork-io/terratest/modules/retry`
+    puts `go get github.com/gruntwork-io/terratest/modules/terraform`
     success = system ("go test")
     if not success 
       raise "ERROR: Go test failed!\n".red
