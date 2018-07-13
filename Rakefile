@@ -18,13 +18,12 @@ namespace :static do
   end
   task :test do
     system ("export GOPATH=$HOME/terratest")
-#    exec("export GOPATH=$HOME/terratest")
-#    exec("export PATH=$PATH:/usr/local/go/bin")
-#    exec("go get github.com/denisenkom/go-mssqldb")
-#    exec("go get github.com/gruntwork-io/terratest/modules/retry")
-#    exec("go get github.com/gruntwork-io/terratest/modules/terraform")
-#    exec("cd terratest/sql")
-#    exec("go test")
+    system("export PATH=$PATH:/usr/local/go/bin")
+    system("go get github.com/denisenkom/go-mssqldb")
+    system("go get github.com/gruntwork-io/terratest/modules/retry")
+    system("go get github.com/gruntwork-io/terratest/modules/terraform")
+    system("cd terratest/sql")
+    system("go test")
     puts "Hello World!"
   end
   task :hello do
