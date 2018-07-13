@@ -23,7 +23,7 @@ ENV ARM_TEST_LOCATION_ALT=${BUILD_ARM_TEST_LOCATION_ALT}
 RUN mkdir /usr/src/${MODULE_NAME}
 COPY . /usr/src/${MODULE_NAME}
 
-WORKDIR /usr/src/${MODULE_NAME}
+WORKDIR /usr/src/${MODULE_NAME}/terratest/sql
 RUN apt-get install -y unzip >/dev/null
 RUN wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip >/dev/null 2>&1
 RUN unzip terraform_0.11.7_linux_amd64.zip >/dev/null
@@ -33,7 +33,6 @@ RUN mv terraform /usr/local/bin
 
 ENV GOPATH $HOME/terratest/sql
 ENV PATH /usr/local/go/bin:/usr/local/bin:/usr/bin
-RUN /bin/bash -c "git version"
 RUN /bin/bash -c "go get github.com/denisenkom/go-mssqldb"
 RUN /bin/bash -c "go get github.com/gruntwork-io/terratest/modules/retry"
 RUN /bin/bash -c "go get github.com/gruntwork-io/terratest/modules/terraform"
