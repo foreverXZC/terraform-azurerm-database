@@ -16,17 +16,17 @@ namespace :static do
   task :format do
     format_tf
   end
-  task :test do
+#  task :test do
 #    puts "Hello World!"
-    exec("export GOPATH=$HOME/terratest")
-    exec("export PATH=$PATH:/usr/local/go/bin")
+#    exec("export GOPATH=$HOME/terratest")
+#    exec("export PATH=$PATH:/usr/local/go/bin")
 #    exec("go get github.com/denisenkom/go-mssqldb")
 #    exec("go get github.com/gruntwork-io/terratest/modules/retry")
 #    exec("go get github.com/gruntwork-io/terratest/modules/terraform")
 #    exec("cd terratest/sql")
 #    exec("go test")
 #    puts "Hello World!"
-  end
+#  end
   task :hello do
     puts "Hello World!"
   end
@@ -34,7 +34,7 @@ end
 
 task :prereqs => []
 
-task :validate => [ 'static:style', 'static:lint', 'static:hello', 'static:test' ]
+task :validate => [ 'static:style', 'static:lint', 'static:hello' ]
 
 task :format => [ 'static:format' ]
 
@@ -42,7 +42,7 @@ task :build => [ 'prereqs', 'validate' ]
 
 task :unit => []
 
-task :e2e => []
+task :e2e => [ 'integration:test' ]
 
 task :default => [ 'build' ]
 
