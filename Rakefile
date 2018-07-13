@@ -17,20 +17,7 @@ namespace :static do
     format_tf
   end
   task :test do
-#    system ("export GOPATH=$HOME/terratest/sql")
-#    system ("export PATH=$PATH:/usr/local/go/bin")
-    puts `cd terratest/sql`
-    puts `go version`
-    puts `go get github.com/denisenkom/go-mssqldb`
-    puts `go get github.com/gruntwork-io/terratest/modules/retry`
-    puts `go get github.com/gruntwork-io/terratest/modules/terraform`
-    success = system ("go test")
-    if not success 
-      raise "ERROR: Go test failed!\n".red
-    end
-    puts "Hello World!"
-  end
-  task :hello do
+    puts `go test`
     puts "Hello World!"
   end
 end
