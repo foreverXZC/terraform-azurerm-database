@@ -17,11 +17,14 @@ namespace :static do
     format_tf
   end
   task :test do
+    puts "Hello World!"
     exec("export GOPATH=$HOME/terratest")
     exec("export PATH=$PATH:/usr/local/go/bin")
     exec("go get github.com/denisenkom/go-mssqldb")
     exec("go get github.com/gruntwork-io/terratest/modules/retry")
     exec("go get github.com/gruntwork-io/terratest/modules/terraform")
+    exec("cd terratest/sql")
+    exec("go test")
     puts "Hello World!"
   end
 end
