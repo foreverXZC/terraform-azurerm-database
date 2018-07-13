@@ -17,11 +17,10 @@ namespace :static do
     format_tf
   end
   task :test do
-    success = system ("go test -v terratest/sql/terraform_database_example_test.go")
+    success = system ("go test -v terratest/sql/terraform_database_example_test.go terratest/sql/database_functions.go")
     if not success 
       raise "ERROR: Go test failed!\n".red
     end
-    puts "Hello World!"
   end
 end
 
