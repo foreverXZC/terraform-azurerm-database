@@ -19,6 +19,9 @@ namespace :static do
   task :test do
     exec("export GOPATH=$HOME/terratest")
     exec("export PATH=$PATH:/usr/local/go/bin")
+    exec("go get github.com/denisenkom/go-mssqldb")
+    exec("go get github.com/gruntwork-io/terratest/modules/retry")
+    exec("go get github.com/gruntwork-io/terratest/modules/terraform")
     puts "Hello World!"
   end
 end
