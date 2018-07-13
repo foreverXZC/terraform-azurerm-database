@@ -17,8 +17,7 @@ namespace :static do
     format_tf
   end
   task :test do
-    puts "Hello World!"
-    message = `export GOPATH=$HOME/terratest`
+    system ("export GOPATH=$HOME/terratest")
 #    exec("export GOPATH=$HOME/terratest")
 #    exec("export PATH=$PATH:/usr/local/go/bin")
 #    exec("go get github.com/denisenkom/go-mssqldb")
