@@ -18,6 +18,7 @@ namespace :static do
   end
   task :test do
     puts "Hello World!"
+  end
 end
 
 task :prereqs => []
