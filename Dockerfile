@@ -32,6 +32,6 @@ RUN tar -zxvf go1.9.2.linux-amd64.tar.gz -C /usr/local/ >/dev/null
 RUN mv terraform /usr/local/bin
 RUN /bin/bash -c "export GOPATH=$HOME/terratest/sql"
 RUN /bin/bash -c "export PATH=$PATH:/usr/local/go/bin"
-RUN /bin/bash -c "go version"
+RUN /bin/bash -c "terraform version"
 
 RUN ["bundle", "install", "--gemfile", "./Gemfile"]

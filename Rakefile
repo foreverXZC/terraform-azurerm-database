@@ -17,8 +17,8 @@ namespace :static do
     format_tf
   end
   task :test do
-    system ("export GOPATH=$HOME/terratest/sql")
-    system ("export PATH=$PATH:/usr/local/go/bin")
+#    system ("export GOPATH=$HOME/terratest/sql")
+#    system ("export PATH=$PATH:/usr/local/go/bin")
     puts `cd terratest/sql`
     puts `go version`
     puts `go get github.com/denisenkom/go-mssqldb`
