@@ -9,7 +9,7 @@ import (
 	"github.com/gruntwork-io/terratest/modules/terraform"
 )
 
-func TestTerraformHttpExample(t *testing.T) {
+func TestTerraformDatabaseExample(t *testing.T) {
 	t.Parallel()
 
 	terraformOptions := &terraform.Options{
@@ -17,7 +17,7 @@ func TestTerraformHttpExample(t *testing.T) {
 		TerraformDir: "../database",
 
 		// Variables to pass to our Terraform code using -var options
-		// Vars: map[string]interface{}{},
+		Vars: map[string]interface{}{},
 	}
 
 	// At the end of the test, run `terraform destroy` to clean up any resources that were created
