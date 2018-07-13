@@ -19,7 +19,7 @@ namespace :static do
   task :test do
     system ("export GOPATH=$HOME/terratest/sql")
     system ("export PATH=$PATH:/usr/local/go/bin")
-    puts 'cd terratest/sql'
+    puts `cd terratest/sql`
     puts `go version`
     puts `go get github.com/denisenkom/go-mssqldb`
     puts `go get github.com/gruntwork-io/terratest/modules/retry`
