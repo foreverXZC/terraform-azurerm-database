@@ -24,21 +24,6 @@ RUN mkdir /usr/src/${MODULE_NAME}
 COPY . /usr/src/${MODULE_NAME}
 WORKDIR /usr/src/${MODULE_NAME}
 
-# Install new version of terraform and golang
-# RUN wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip >/dev/null 2>&1
-# RUN unzip terraform_0.11.7_linux_amd64.zip >/dev/null
-# RUN wget https://storage.googleapis.com/golang/go1.10.3.linux-amd64.tar.gz >/dev/null 2>&1
-# RUN tar -zxvf go1.10.3.linux-amd64.tar.gz -C /usr/local/ >/dev/null
-# RUN mv terraform /usr/local/bin
-
-# Install required go packages
-# ENV GOPATH $HOME/terratest/sql
-# ENV PATH /usr/local/go/bin:/usr/local/bin:/usr/bin
-# RUN /bin/bash -c "go get github.com/denisenkom/go-mssqldb"
-# RUN /bin/bash -c "go get github.com/gruntwork-io/terratest/modules/retry"
-# RUN /bin/bash -c "go get github.com/gruntwork-io/terratest/modules/terraform"
-# RUN /bin/bash -c "terraform version"
-
 # Set work directory
 RUN mkdir /go
 RUN mkdir /go/bin
