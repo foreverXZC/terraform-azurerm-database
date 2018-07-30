@@ -1,6 +1,6 @@
 # terraform-azurerm-database
 
-[![Build Status](https://travis-ci.org/foreverXZC/terraform-azurerm-database.svg?branch=master)](https://travis-ci.org/foreverXZC/terraform-azurerm-database)
+[![Build Status](https://travis-ci.org/Azure/terraform-azurerm-database.svg?branch=master)](https://travis-ci.org/Azure/terraform-azurerm-database)
 
 ## Create an Azure SQL Database
 
