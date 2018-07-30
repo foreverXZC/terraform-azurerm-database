@@ -20,7 +20,7 @@ end
 
 namespace :integration do
   task :test do
-    success = system ("go test -v terratest/sql/terraform_database_example_test.go terratest/sql/database_functions.go")
+    success = system ("go test -v ./test/")
     if not success 
       raise "ERROR: Go test failed!\n".red
     end
